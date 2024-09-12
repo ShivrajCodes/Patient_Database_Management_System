@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Record Details</title>
+    <title>Patient Database Management System</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('bg.png'); 
+            background-image: url("{{ url_for('static', filename='bg.png') }}"); 
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -14,23 +15,12 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            color: white;
-        }
-        .container {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
+            color: red;
         }
         h1 {
-            font-size: 18px;
             margin-bottom: 20px;
-        }
-        p {
-            text-align: left;
-            margin: 5px 0;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .button {
             display: inline-block;
@@ -47,7 +37,6 @@
             position: relative;
             transition: background-color 0.3s;
             cursor: pointer;
-            width: 100%;
         }
         .button:hover {
             background-color: #333;
@@ -76,21 +65,9 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Record Details</h1>
-        <p>ID: {{ record[0] }}</p>
-        <p>Name: {{ record[1] }}</p>
-        <p>Address: {{ record[2] }}</p>
-        <p>Phone Number: {{ record[3] }}</p>
-        <p>Age: {{ record[4] }}</p>
-        <p>Blood Group: {{ record[5] }}</p>
-        <p>Oxygen Saturation: {{ record[6] }}</p>
-        <p>Height: {{ record[7] }}</p>
-        <p>Weight: {{ record[8] }}</p>
-        <p>BMI: {{ record[9] }}</p>
-        <p>BMI Category: {{ record[10] }}</p>
-        <p>Oxygen Status: {{ record[11] }}</p>
-        <a class="button" href="{{ url_for('index') }}">Back to Main Menu</a>
-    </div>
+    <h1>PATIENT DATABASE MANAGEMENT SYSTEM</h1>
+    <h2>Main Menu</h2>
+    <a class="button" href="{{ url_for('add_person') }}">Add a New Person</a>
+    <a class="button" href="{{ url_for('display_form') }}">Display Person Data by ID</a>
 </body>
 </html>

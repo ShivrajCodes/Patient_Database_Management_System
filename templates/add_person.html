@@ -5,7 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('bg.png'); 
+            background-image: url("{{ url_for('static', filename='bg.png') }}");
             background-size: cover;
             background-position: center;
             height: 100vh;
