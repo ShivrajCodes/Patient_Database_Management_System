@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Database Management System</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.png'); 
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: red;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+            border: none;
+            border-radius: 50px;
+            overflow: hidden;
+            position: relative;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #333;
+        }
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+        }
+        .button:hover::before {
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% {
+                left: -75%;
+            }
+            100% {
+                left: 125%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>PATIENT DATABASE MANAGEMENT SYSTEM</h1>
+    <h2>Main Menu</h2>
+    <a class="button" href="{{ url_for('add_person') }}">Add a New Person</a>
+    <a class="button" href="{{ url_for('display_form') }}">Display Person Data by ID</a>
+</body>
+</html>
